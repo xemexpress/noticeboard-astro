@@ -1,0 +1,98 @@
+---
+import { SEO } from "astro-seo";
+
+import logo from "../content/noticeboard-logo.png";
+import { getImage } from "astro:assets";
+import { OUR_BRAND } from "../utils/constants";
+import Header from "../components/Header.astro";
+import Main from "../components/Main.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    type?: string;
+    image?: string;
+}
+
+const {
+    title,
+    description = "The Hermitage Noticeboard - 大角咀 The Hermitage 屋苑公告欄",
+    type = "website",
+    image,
+} = Astro.props;
+const brandedTitle = title.toLowerCase().includes(OUR_BRAND.NAME.toLowerCase())
+    ? title
+    : `${title} | ${OUR_BRAND.NAME}`;
+
+const finalImageSrc = (
+    await getImage({
+        src: image || logo,
+        width: 1200,
+        height: 630,
+        format: "jpg",
+        quality: 90,
+        fit: "contain",
+        background: "white",
+    })
+).src;
+
+const faviconSrcPNG = (
+    await getImage({
+        src: logo,
+        width: 32,
+        height: 32,
+        format: "png",
+        quality: 90,
+    })
+).src;
+---
+
+<!doctype html>
+<html lang="zh-HK">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href={faviconSrcPNG} />
+
+        <SEO
+            title={title}
+            description={description}
+            openGraph={{
+                basic: {
+                    title: title,
+                    type: type,
+                    image: finalImageSrc,
+                    url: Astro.url,
+                },
+                optional: {
+                    description: description,
+                    siteName: OUR_BRAND.NAME,
+                },
+                image: {
+                    url: finalImageSrc,
+                    alt: description,
+                },
+            }}
+            twitter={{
+                card: "summary_large_image",
+                site: Astro.url.href,
+                creator: "@xemexpress",
+                title: brandedTitle,
+                description: description,
+                image: finalImageSrc,
+                imageAlt: description,
+            }}
+            extend={{
+                link: [{ rel: "icon", href: OUR_BRAND.LOGO }],
+            }}
+        />
+    </head>
+    <body class="bg-gray-100 text-gray-900">
+        <Header />
+        <Main>
+            <slot />
+        </Main>
+        <Footer />
+    </body>
+</html>
