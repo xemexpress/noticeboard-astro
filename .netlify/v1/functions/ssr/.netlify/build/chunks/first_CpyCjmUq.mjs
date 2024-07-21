@@ -15,7 +15,7 @@ const id = "first.md";
 							return target[name];
 						}
 					})
-					,updatedAt:new Date(1721381160000)};
+					,updatedAt:new Date(1721526900000)};
 						const _internal = {
 							type: 'content',
 							filePath: "/Users/jasonluo/Documents/astro/noticeboard/src/content/notices/first.md",

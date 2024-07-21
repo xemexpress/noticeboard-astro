@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./first_CabhFPBF.mjs');
+						return import('./first_zqfAg_Uw.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

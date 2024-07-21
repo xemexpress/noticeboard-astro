@@ -1,18 +1,37 @@
 ---
 import { OUR_BRAND } from "../utils/constants";
+import { Icon } from "astro-icon/components";
+
+const defaultMessage = encodeURIComponent(
+    `您好！我是帝峰皇殿的住戶。我對網上版「住戶資訊天地」有以下評論/建議/反饋：`
+);
 ---
 
-<header class="bg-brand-primary text-white shadow">
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col sm:flex-row justify-between items-center">
-            <div class="text-center sm:text-left mb-4 sm:mb-0">
-                <p class="text-lg font-semibold">{OUR_BRAND.NAME} - MVP 版本</p>
-                <p class="text-sm">
-                    您好，歡迎來到Noticeboard。這是一個最簡可行產品
-                    (MVP)，計劃在網頁展示我們屋苑的「住戶資訊天地」，為住戶提供更便利的查閱方式。<br
-                    />如有任何建議或意見，請whatsapp至+852 54886130。
+<header class="bg-brand-primary text-white shadow py-3 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-center"
+        >
+            <div class="mb-3 sm:mb-0 sm:mr-4">
+                <h2 class="text-lg font-semibold mb-2">
+                    {OUR_BRAND.NAME} - MVP
+                </h2>
+                <p class="text-sm leading-relaxed max-w-prose">
+                    歡迎使用網上版「住戶資訊天地」。這個平台由住戶自發建立，旨在為大家提供更多便利。
+                </p>
+                <p class="text-sm leading-relaxed max-w-prose mt-2">
+                    如果您有任何建議或想參與貢獻此計劃，請與我聯絡。
                 </p>
             </div>
+            <a
+                href={`https://wa.me/85254886130?text=${defaultMessage}`}
+                class="flex items-center justify-center bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors duration-300 py-2 px-4 rounded-full text-sm font-medium whitespace-nowrap"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Icon name="mdi:whatsapp" class="w-5 h-5 mr-2" />
+                <span>按此處提供意見</span>
+            </a>
         </div>
     </div>
 </header>

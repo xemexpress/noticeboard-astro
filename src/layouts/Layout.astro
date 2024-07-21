@@ -87,6 +87,24 @@ const faviconSrcPNG = (
                 link: [{ rel: "icon", href: OUR_BRAND.LOGO }],
             }}
         />
+
+        <!-- Below: Google tag (gtag.js) -->
+        <script
+            is:inline
+            type="text/partytown"
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-CFE6Z4CN9H"
+        ></script>
+        <script is:inline type="text/partytown">
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-CFE6Z4CN9H");
+        </script>
+        <!-- Above: Google tag (gtag.js) -->
     </head>
     <body class="bg-gray-100 text-gray-900">
         <Header />

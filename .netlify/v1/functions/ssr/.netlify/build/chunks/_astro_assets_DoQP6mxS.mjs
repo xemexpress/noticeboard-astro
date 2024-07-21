@@ -1,6 +1,6 @@
 import { A as AstroError, f as NoImageMetadata, F as FailedToFetchRemoteImageDimensions, E as ExpectedImageOptions, g as ExpectedImage, h as ExpectedNotESMImage, r as resolveSrc, j as isRemoteImage, k as isESMImportedImage, l as isLocalService, D as DEFAULT_HASH_PROPS, m as InvalidImageService, n as ImageMissingAlt } from './astro/assets-service_DY95dySI.mjs';
 import '@astrojs/internal-helpers/path';
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as addAttribute, s as spreadAttributes, b as createAstro } from './astro/server_DC7DVFn0.mjs';
+import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, s as spreadAttributes } from './astro/server_CuqoqbSx.mjs';
 import * as mime from 'mrmime';
 import 'clsx';
 
@@ -928,7 +928,7 @@ async function getImage$1(options, imageConfig) {
   };
 }
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("http://localhost:3000");
 const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Image;
@@ -950,7 +950,7 @@ const $$Image = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(additionalAttributes)}${spreadAttributes(image.attributes)}>`;
 }, "/Users/jasonluo/Documents/astro/noticeboard/node_modules/astro/components/Image.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("http://localhost:3000");
 const $$Picture = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Picture;

@@ -1,10 +1,10 @@
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, u as unescapeHTML } from './astro/server_DC7DVFn0.mjs';
+import { a as createComponent, r as renderTemplate, m as maybeRenderHead, u as unescapeHTML } from './astro/server_CuqoqbSx.mjs';
 import 'kleur/colors';
 import 'clsx';
 
 const html = "";
 
-				const frontmatter = {"image":"./images/noticeboard.png","updatedAt":"2024-07-19T17:26:00+08:00"};
+				const frontmatter = {"image":"./images/noticeboard.png","updatedAt":"2024-07-21T09:55:00+08:00"};
 				const file = "/Users/jasonluo/Documents/astro/noticeboard/src/content/notices/first.md";
 				const url = undefined;
 				function rawContent() {
