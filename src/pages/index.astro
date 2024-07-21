@@ -5,7 +5,7 @@ import { OUR_BRAND } from "../utils/constants";
 import { getEntryBySlug } from "astro:content";
 
 // SEO related
-const title = `${OUR_BRAND.NAME}`;
+const title = `${OUR_BRAND.NAME} - 住戶資訊天地`;
 const description = OUR_BRAND.DESCRIPTION;
 
 const noticeboard = await getEntryBySlug("notices", "first");
@@ -14,10 +14,9 @@ const { image, updatedAt } = noticeboard.data;
 
 <Layout title={title} description={description}>
     <div class="max-w-4xl mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-6 text-center text-brand-primary">
-            {OUR_BRAND.NAME}
+        <h1 class="text-2xl font-semibold mb-6 text-center text-brand-primary">
+            住戶資訊天地
         </h1>
-        <p class="text-lg mb-8 text-center">{description}</p>
         <div
             class="bg-white shadow-lg rounded-lg overflow-hidden border-4 border-brand-primary"
         >

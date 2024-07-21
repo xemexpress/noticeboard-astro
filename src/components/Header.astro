@@ -9,13 +9,26 @@ const defaultMessage = encodeURIComponent(
 
 <header class="bg-brand-primary text-white shadow py-3 px-4">
     <div class="max-w-7xl mx-auto">
-        <div
-            class="flex flex-col sm:flex-row sm:justify-between sm:items-center"
-        >
-            <div class="mb-3 sm:mb-0 sm:mr-4">
-                <h2 class="text-lg font-semibold mb-2">
+        <div class="flex flex-col space-y-3 sm:space-y-0">
+            <div class="flex justify-between items-center">
+                <h2 class="text-lg font-semibold">
                     {OUR_BRAND.NAME} - MVP
                 </h2>
+                <a
+                    href={`https://wa.me/85254886130?text=${defaultMessage}`}
+                    class="flex items-center justify-center bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors duration-300 py-1 px-3 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap ml-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Icon
+                        name="mdi:whatsapp"
+                        class="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
+                    />
+                    <span class="hidden sm:inline">按此處提供意見</span>
+                    <span class="sm:hidden">按此提供意見</span>
+                </a>
+            </div>
+            <div>
                 <p class="text-sm leading-relaxed max-w-prose">
                     歡迎使用網上版「住戶資訊天地」。這個平台由住戶自發建立，旨在為大家提供更多便利。
                 </p>
@@ -23,15 +36,6 @@ const defaultMessage = encodeURIComponent(
                     如果您有任何建議或想參與貢獻此計劃，請與我聯絡。
                 </p>
             </div>
-            <a
-                href={`https://wa.me/85254886130?text=${defaultMessage}`}
-                class="flex items-center justify-center bg-white bg-opacity-20 text-white hover:bg-opacity-30 transition-colors duration-300 py-2 px-4 rounded-full text-sm font-medium whitespace-nowrap"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Icon name="mdi:whatsapp" class="w-5 h-5 mr-2" />
-                <span>按此處提供意見</span>
-            </a>
         </div>
     </div>
 </header>
