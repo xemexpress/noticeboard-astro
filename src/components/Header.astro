@@ -2,9 +2,7 @@
 import { OUR_BRAND } from "../utils/constants";
 import { Icon } from "astro-icon/components";
 
-const defaultMessage = encodeURIComponent(
-    `您好！我是帝峰皇殿的住戶。我對網上版「住戶資訊天地」有以下評論/建議/反饋：`
-);
+const defaultMessage = encodeURIComponent(`Hello Jason，我是帝峰皇殿的住戶。`);
 ---
 
 <header class="bg-brand-primary text-white shadow py-3 px-4">
@@ -33,7 +31,11 @@ const defaultMessage = encodeURIComponent(
                     歡迎使用網上版「住戶資訊天地」。這個平台由住戶自發建立，旨在為大家提供更多便利。
                 </p>
                 <p class="text-sm leading-relaxed max-w-prose mt-2">
-                    如果您有任何建議或想參與貢獻此計劃，請與我聯絡。
+                    如有興趣參與或提供建議，請與我聯絡
+                    <Icon
+                        name="mdi:hand-wave"
+                        class="inline-block w-4 h-4 ml-1"
+                    />
                 </p>
             </div>
         </div>

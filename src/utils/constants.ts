@@ -1,5 +1,5 @@
 export const OUR_BRAND = {
-    NAME: "Noticeboard",
+    NAME: "Unofficial Noticeboard",
     COPYRIGHT: "2024",
     LOGO: "../content/noticeboard-logo.png",
     get DESCRIPTION() {
