@@ -1,8 +1,8 @@
 export const OUR_BRAND = {
     NAME: "Unofficial Noticeboard",
     COPYRIGHT: "2024",
-    LOGO: "../content/noticeboard-logo.png",
+    LOGO: "../content/logo.png",
     get DESCRIPTION() {
-        return `Welcome to our digital ${this.NAME}`;
+        return `Welcome to our digital unofficial noticeboard.`;
     },
 };

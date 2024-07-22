@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import { getImage } from "astro:assets";
 import { OUR_BRAND } from "../utils/constants";
 import { getEntryBySlug } from "astro:content";
+import ProgressiveImage from "../components/ProgressiveImage";
 
 // SEO related
 const title = `${OUR_BRAND.NAME} - 住戶資訊天地`;
@@ -10,6 +11,22 @@ const description = OUR_BRAND.DESCRIPTION;
 
 const noticeboard = await getEntryBySlug("notices", "first");
 const { image, updatedAt } = noticeboard.data;
+
+const highResImage = await getImage({
+    src: image,
+    width: 2100, // Specify the dimensions you need
+    height: 1400,
+    format: "webp",
+    quality: 90,
+});
+
+const lowResImage = await getImage({
+    src: image,
+    width: 300,
+    height: 200,
+    format: "webp",
+    quality: 30,
+});
 ---
 
 <Layout title={title} description={description}>
@@ -20,11 +37,11 @@ const { image, updatedAt } = noticeboard.data;
         <div
             class="bg-white shadow-lg rounded-lg overflow-hidden border-4 border-brand-primary"
         >
-            <Image
-                class="w-full h-auto"
-                src={image}
+            <ProgressiveImage
+                client:load
+                lowResSrc={lowResImage.src}
+                highResSrc={highResImage.src}
                 alt="The Hermitage Noticeboard"
-                loading="eager"
             />
         </div>
         <p class="mt-4 text-sm text-gray-600 text-center">

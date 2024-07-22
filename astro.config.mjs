@@ -5,6 +5,8 @@ import icon from "astro-icon";
 import partytown from "@astrojs/partytown";
 import { onRequest } from "./src/middleware";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
     server: {
@@ -18,6 +20,7 @@ export default defineConfig({
                 forward: ["dataLayer.push"],
             },
         }),
+        react(),
     ],
     site: process.env.SITE_URL || "http://localhost:3000",
     output: "server",
