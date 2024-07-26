@@ -33,6 +33,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
         const uid = await checkUser();
         if (uid) {
             console.log("User logged in with UID:", uid);
+            context.locals.user = { uid };
         } else {
             console.log("Failed to log in user");
         }
